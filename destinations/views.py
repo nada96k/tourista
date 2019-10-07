@@ -3,6 +3,7 @@ from .models import Destination
 from .forms import DestinationForm
 
 
+
 def destination_list(request):
     context = {
         "destinations": Destination.objects.all()
@@ -49,3 +50,7 @@ def destination_delete(request, destination_id):
     destination_obj = Destination.objects.get(id=destination_id)
     destination_obj.delete()
     return redirect('destination-list')
+
+
+def who_are(request):
+    return render(request, 'who.html')

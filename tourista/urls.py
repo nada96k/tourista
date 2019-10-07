@@ -32,6 +32,8 @@ urlpatterns = [
          views.destination_update, name='destination-update'),
     path('destinations/delete/<int:destination_id>/',
          views.destination_delete, name='destination-delete'),
+    path('destinations/whorwe/',
+         views.who_are, name='who-are-we'),
 ]
 
 if settings.DEBUG:

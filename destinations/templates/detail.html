@@ -3,15 +3,15 @@
 {% block title %}Detail{% endblock title %} 
 
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
+    <h2>{{destination.name}}</h2>
+   <strong><p>{{destination.description}}</p></strong>
+    <p style="color: rgb(10,102,71); font-style: italic">{{destination.activities}}</p>
+    <p><img src="{{destination.pretty_picture.url}}" height="400px" width="500px"></p>
+    <strong><p> Visiting Season: {{destination.optimal_visiting_season}}</p></strong>
+    <a href="{% url 'destination-update' destination.id %}" class="btn btn-info">
+    Update
     </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
+    <a href="{% url 'destination-delete' destination.id %}" class="btn btn-info" >
+    Delete
     </a>
 {% endblock content %}
